@@ -1,0 +1,10 @@
+AuthType Basic
+AuthName "Raspberry PI Chronos"
+AuthUserFile /home/pi/.htpasswd
+Require valid-user
+
+
+RewriteEngine On
+Options FollowSymLinks
+RewriteCond $1 !^(index\.php|img/|css/|favicon\.ico|js/|test/|lib/|softcloud/)
+RewriteRule ^(.*)$ /index.php/$1 [L] 

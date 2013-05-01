@@ -1,0 +1,143 @@
+html,body{
+	margin:0;
+	padding: 0;
+	background-color: #F0F0F0;
+	height: 100%;
+}
+
+#header #logo a{
+	text-decoration: none;
+	color: white;
+}
+
+#wrap{
+	margin: auto;
+	height: auto;
+	min-height:100%;
+}
+
+#header
+{
+	background-image: linear-gradient(bottom, rgb(0,0,0) 0%, rgb(56,55,56) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(56,55,56) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(56,55,56) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(56,55,56) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(0,0,0) 0%, rgb(56,55,56) 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(0,0,0)), color-stop(1, rgb(56,55,56)));
+	height: 60px;
+	width: 100%;
+}
+
+#header #logo
+{
+	color: white;
+	font-size: 2em;
+	padding: 10px 0 0 20px;
+	border-right: 1px solid #404040;
+	height: 50px;
+	width: 170px;
+	position: absolute;
+}
+
+#header #user
+{
+	position:absolute;
+	right: 20px;
+	color: white;
+	top:12px;
+}
+
+#menu
+{
+	background: #232323;
+	background: -moz-linear-gradient(left,  #232323 0%, #232323 95%, #000000 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#232323), color-stop(95%,#232323), color-stop(100%,#000000));
+	background: -webkit-linear-gradient(left,  #232323 0%,#232323 95%,#000000 100%);
+	background: -o-linear-gradient(left,  #232323 0%,#232323 95%,#000000 100%);
+	background: -ms-linear-gradient(left,  #232323 0%,#232323 95%,#000000 100%);
+	background: linear-gradient(to right,  #232323 0%,#232323 95%,#000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232323', endColorstr='#000000',GradientType=1 );
+
+	width: 190px;
+	height: 1000px;
+	float:left;
+	margin-right: 20px;
+}
+
+nav{
+   width:100%;
+   background: #161616;
+}
+nav li{
+   list-style: none;
+   position:relative;
+   border-top: 1px solid #3A3A3A;
+   border-bottom: 1px solid #3A3A3A; /* importante, para que el submenu tome la posición correcta*/
+}
+nav li a, span{
+   color:#808080;
+   text-decoration:none;
+   padding: 5px;
+   display:block;
+}
+nav li a:hover{
+   color:#08D;
+}
+
+.sel
+{
+   color:#08D;
+}
+
+nav li li a{
+   display:block;
+}
+.block ul
+{
+	display:block;
+}
+
+nav ul {
+   margin:0;
+   display: none;
+   background:#161616;
+   -webkit-padding-start: 0px;
+   -moz-padding-start: 0px;
+}
+
+nav ul li a
+{
+	padding-left: 20px;
+}
+
+td, th{text-align:center; padding: 0 5px 0 5px;}
+
+tr > th > a{color:blue;}
+
+#prog .point
+{
+	cursor: pointer;
+}
+
+#prog
+{
+	width: 100%;
+	
+}
+
+#prog table
+{
+	margin: 0 auto;
+	position: relative;
+}
+
+#content {
+	float: left;
+	padding-top: 20px;
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+	height: 900px;
+	width: -webkit-calc(100% - 230px);
+	width: -moz-calc(100% - 230px);
+	width: calc(100% - 230px);
+}
