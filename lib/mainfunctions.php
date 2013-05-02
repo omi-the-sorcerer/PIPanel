@@ -118,5 +118,15 @@ function logs($file, $grep = '', $tail = '')
 function unsets($SES) 
 {
   unset($_SESSION[$SES]);
-} 
+}
+
+
+function temp()
+{
+  exec('sudo /usr/bin/vcgencmd measure_temp', $output, $return_var);
+  if($return_var) return FALSE;
+  foreach($output as $line)
+    if(substr($line, 0, 5) == 'temp=')
+      return substr($line, 5, -2);
+}
 ?>
