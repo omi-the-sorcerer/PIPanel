@@ -1,0 +1,2 @@
+# Grant access required by the PiPanel web interface
+www-data ALL=(ALL) NOPASSWD: ALL

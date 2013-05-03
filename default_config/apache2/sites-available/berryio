@@ -1,0 +1,44 @@
+
+<VirtualHost *:80>
+  # PiPanel Web Interface
+  ServerName pipanel
+  ServerAdmin pi@localhost
+
+  DocumentRoot /usr/share/pipanel/
+  
+  DefineExternalAuth pwauth pipe /usr/sbin/pwauth
+
+  <Directory /usr/share/pipanel/>
+    Options Indexes None
+    AllowOverride None
+    Order allow,deny
+    allow from all
+
+    php_admin_value open_basedir "/usr/share/pipanel/"
+    php_admin_value include_path "/usr/share/pipanel/lib"
+    
+    AuthType Basic
+    AuthName "Raspberry Pi Login"
+    AuthBasicProvider external
+    AuthExternal pwauth
+
+    # Redirect all web pages to the main PiPanel MVC framework
+    RewriteEngine on
+    Options FollowSymLinks
+    RewriteCond $1 !^(index\.php|img/|css/|favicon\.ico|js/|lib/)
+    RewriteRule ^(.*)$ /index.php/$1 [L]        
+  </Directory>
+
+  <Files ~ "\.php$">
+    # Main PiPanel engine requires a valid login
+    require valid-user
+  </Files>
+
+  ErrorLog /var/log/pipanel/error.log
+
+  # Possible values include: debug, info, notice, warn, error, crit,
+  # alert, emerg.
+  LogLevel warn
+
+  CustomLog /var/log/pipanel/access.log combined
+</VirtualHost>
